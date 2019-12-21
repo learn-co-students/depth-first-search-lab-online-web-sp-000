@@ -23,7 +23,7 @@ function findAdjacent(nodeName, vertices, edges){
   return edges.filter(function(edge){return edge.includes(nodeName)}) //first filters edges that have the nodeNames in them
               .map(function(edge){return edge.filter(function(node){return (node != nodeName)})[0]}) //maps edges where nodes are not equal in name
               .map(function(name){return findNode(name, vertices)}) //maps the nodes that match vertex names
-              .filter(function(node){return !node.discovered}) //filters all the ones that have null distances
+              .filter(function(node){return !node.discovered}) //filters all the ones that aren't discovered yet
 }
 
 
