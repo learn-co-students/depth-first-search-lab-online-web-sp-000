@@ -1,27 +1,18 @@
 function depthFirstSearch(rootNode, vertices, edges){
-  // return [a, b, c, d, e, f];
-  // rootNode.discovered = true;
   let target = [rootNode];
   let stack = [rootNode];
 
   while (stack.length > 0){
-    // break;
     let current = stack.pop();
     if (current.discovered === null){
       current.discovered = true;
 
       const adjacents = findAdjacents(current.name, vertices, edges);
 
-      // target = target.concat(adjacents);
-      // markdiscovered(adjacents);
       stack = stack.concat(adjacents);
       target = target.concat(adjacents);
     }
-    // break;
   }
-
-
-  // , vertices, edges
   return target;
 }
 
